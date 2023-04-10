@@ -1,0 +1,1304 @@
+fileFormatVersion: 2
+guid: 6d31c8fe4e4c5614080253dca149f5bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: MasterDetail_Iso_Sheet4of5(2)_0
+  - first:
+      213: 21300002
+    second: MasterDetail_Iso_Sheet4of5(2)_1
+  - first:
+      213: 21300004
+    second: MasterDetail_Iso_Sheet4of5(2)_2
+  - first:
+      213: 21300006
+    second: MasterDetail_Iso_Sheet4of5(2)_3
+  - first:
+      213: 21300008
+    second: MasterDetail_Iso_Sheet4of5(2)_4
+  - first:
+      213: 21300010
+    second: MasterDetail_Iso_Sheet4of5(2)_5
+  - first:
+      213: 21300012
+    second: MasterDetail_Iso_Sheet4of5(2)_6
+  - first:
+      213: 21300014
+    second: MasterDetail_Iso_Sheet4of5(2)_7
+  - first:
+      213: 21300016
+    second: MasterDetail_Iso_Sheet4of5(2)_8
+  - first:
+      213: 21300018
+    second: MasterDetail_Iso_Sheet4of5(2)_9
+  - first:
+      213: 21300020
+    second: MasterDetail_Iso_Sheet4of5(2)_10
+  - first:
+      213: 21300022
+    second: MasterDetail_Iso_Sheet4of5(2)_11
+  - first:
+      213: 21300024
+    second: MasterDetail_Iso_Sheet4of5(2)_12
+  - first:
+      213: 21300026
+    second: MasterDetail_Iso_Sheet4of5(2)_13
+  - first:
+      213: 21300028
+    second: MasterDetail_Iso_Sheet4of5(2)_14
+  - first:
+      213: 21300030
+    second: MasterDetail_Iso_Sheet4of5(2)_15
+  - first:
+      213: 21300032
+    second: MasterDetail_Iso_Sheet4of5(2)_16
+  - first:
+      213: 21300034
+    second: MasterDetail_Iso_Sheet4of5(2)_17
+  - first:
+      213: 21300036
+    second: MasterDetail_Iso_Sheet4of5(2)_18
+  - first:
+      213: 21300038
+    second: MasterDetail_Iso_Sheet4of5(2)_19
+  - first:
+      213: 21300040
+    second: MasterDetail_Iso_Sheet4of5(2)_20
+  - first:
+      213: 21300042
+    second: MasterDetail_Iso_Sheet4of5(2)_21
+  - first:
+      213: 21300044
+    second: MasterDetail_Iso_Sheet4of5(2)_22
+  - first:
+      213: 21300046
+    second: MasterDetail_Iso_Sheet4of5(2)_23
+  - first:
+      213: 21300048
+    second: MasterDetail_Iso_Sheet4of5(2)_24
+  - first:
+      213: 21300050
+    second: MasterDetail_Iso_Sheet4of5(2)_25
+  - first:
+      213: 21300052
+    second: MasterDetail_Iso_Sheet4of5(2)_26
+  - first:
+      213: 21300054
+    second: MasterDetail_Iso_Sheet4of5(2)_27
+  - first:
+      213: 21300056
+    second: MasterDetail_Iso_Sheet4of5(2)_28
+  - first:
+      213: 21300058
+    second: MasterDetail_Iso_Sheet4of5(2)_29
+  - first:
+      213: 21300060
+    second: MasterDetail_Iso_Sheet4of5(2)_30
+  - first:
+      213: 21300062
+    second: MasterDetail_Iso_Sheet4of5(2)_31
+  - first:
+      213: 21300064
+    second: MasterDetail_Iso_Sheet4of5(2)_32
+  - first:
+      213: 21300066
+    second: MasterDetail_Iso_Sheet4of5(2)_33
+  - first:
+      213: 21300068
+    second: MasterDetail_Iso_Sheet4of5(2)_34
+  - first:
+      213: 21300070
+    second: MasterDetail_Iso_Sheet4of5(2)_35
+  - first:
+      213: 21300072
+    second: MasterDetail_Iso_Sheet4of5(2)_36
+  - first:
+      213: 21300074
+    second: MasterDetail_Iso_Sheet4of5(2)_37
+  - first:
+      213: 21300076
+    second: MasterDetail_Iso_Sheet4of5(2)_38
+  - first:
+      213: 21300078
+    second: MasterDetail_Iso_Sheet4of5(2)_39
+  - first:
+      213: 21300080
+    second: MasterDetail_Iso_Sheet4of5(2)_40
+  - first:
+      213: 21300082
+    second: MasterDetail_Iso_Sheet4of5(2)_41
+  - first:
+      213: 21300084
+    second: MasterDetail_Iso_Sheet4of5(2)_42
+  - first:
+      213: 21300086
+    second: MasterDetail_Iso_Sheet4of5(2)_43
+  - first:
+      213: 21300088
+    second: MasterDetail_Iso_Sheet4of5(2)_44
+  - first:
+      213: 21300090
+    second: MasterDetail_Iso_Sheet4of5(2)_45
+  - first:
+      213: 21300092
+    second: MasterDetail_Iso_Sheet4of5(2)_46
+  - first:
+      213: 21300094
+    second: MasterDetail_Iso_Sheet4of5(2)_47
+  - first:
+      213: 21300096
+    second: MasterDetail_Iso_Sheet4of5(2)_48
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_0
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 1667
+        width: 197
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76113eb3afb64ac48b0273c6805fdfbc
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_1
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1696
+        width: 183
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26e3cde24718be4c934ed9ec75198bd
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_2
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1752
+        width: 157
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86890db127f27cf488036edf2f593dde
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_3
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1737
+        width: 173
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a0b3991f7a33e46bcaca5197c2d587
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_4
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1694
+        width: 184
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e3a463fdb934e4ab3c20c3280b7abb
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_5
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 1677
+        width: 196
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f87c62899ac6348a55c983ecfbb1e6
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_6
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 1691
+        width: 240
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5792fd408892aa34899399c390f8998d
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_7
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1376
+        width: 176
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a222285a4d9c0224a882d8314cb61ee3
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_8
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1377
+        width: 173
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d31559157eaa54d8d432224fd779c3
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_9
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1381
+        width: 184
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ba8cb52d95af3419ae846da1223c6e
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_10
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1355
+        width: 236
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f37696ad32674694db40af88cdd9e9c7
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_11
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1334
+        width: 221
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6974d6eb6c12a409667efa69b4a048
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_12
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 1368
+        width: 198
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f48d790082154f4fbd8c846600dd3c6
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_13
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 1367
+        width: 217
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c232b68158ef264689623dba41622e3
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_14
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 1364
+        width: 140
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5260b7219be17934fa1ba9cb0c25171a
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1026
+        width: 177
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8098002b62a2b064d8d60b593cc222f7
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_16
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1028
+        width: 178
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302bf12492cd0d74ca9529fddd62bef7
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_17
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1031
+        width: 184
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31f710936e431a429c7295cec745294
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_18
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 988
+        width: 214
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44338d84852079d4bbb3a20b6e003361
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_19
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 996
+        width: 234
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e166b6d7ebeb78d479cea8dd7aa60fea
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_20
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1012
+        width: 221
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005d12408e795c54289eacd62281f531
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_21
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 1012
+        width: 220
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42604e46a72d8b48875cedaa7b88c50
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_22
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 991
+        width: 140
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd83a2019b9a80540b744f28bb795134
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_23
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 674
+        width: 169
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f9f0fb1cdfb624bb9c7d24800a62d3
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_24
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 666
+        width: 184
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260c3a3378f5408439ffede8d27102ed
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_25
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 704
+        width: 219
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8de3dee8932be14ca752da7d6996e57
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_26
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 666
+        width: 221
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e670c1b950d1544591ffa0ba969a8fb
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_27
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 647
+        width: 219
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ac047e5d1b29d478b66e4f48f0cc0a
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_28
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 696
+        width: 180
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef82e11fbe930f242bdd46231a5b5d4a
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_29
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 691
+        width: 136
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24ae2bb49b749e44b7de6de5362c29e
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_30
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 697
+        width: 174
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e24aaa045097b24dbb41ff32b3889b6
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 166
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df30824324b427e4d8452d221a8e90f1
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_32
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 316
+        width: 156
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9416b3f83379cdf448a64922871b7722
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_33
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 334
+        width: 167
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf26229cbf704d2498f1be7223491862
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_34
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 308
+        width: 202
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f8e5610b745f94f82a4fe8b9642426
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_35
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 310
+        width: 209
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a3c8c0a1dfe6d49bc1021404eb0903
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_36
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 360
+        width: 166
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9d0629081c1674db19340ff85ebe43
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_37
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 382
+        width: 160
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c874cf537beabbb459c28dcc30f6f154
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_38
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 370
+        width: 149
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db438613af38a94281ea499a2a573bd
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 142
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325a058d737a4d44fa0f43115f72a377
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_40
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 91
+        width: 143
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25e29c518eda5249b08a504706dac5d
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_41
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 88
+        width: 142
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a487724f5b09eaf49bbb6dbe069d4135
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_42
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 92
+        width: 145
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d41be802be3b1e43ad2f6ca00d875c9
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_43
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 86
+        width: 138
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e919984ccaa4b0b42b99289bf429dd72
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_44
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 95
+        width: 142
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18025d34bacd08b45bf3950968f941fc
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_45
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 143
+        width: 155
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa739ba4341d0d94ea8f6e51846d6902
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_46
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 117
+        width: 141
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e693929e99641e4e888736eed324244
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_47
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 132
+        width: 144
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1580db3ffc40c428dbba68049cbc33
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MasterDetail_Iso_Sheet4of5(2)_48
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 142
+        width: 152
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577f72328c7442240b5d61d70d46eed9
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a1d0fc5745bcb4d4fbec469c98be5541
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
