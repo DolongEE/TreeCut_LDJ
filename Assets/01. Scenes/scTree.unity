@@ -544,7 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_count: {fileID: 455219424}
   hp_bar: {fileID: 2034522801}
-  hp_fill: {fileID: 62713250}
+  hp_max: {fileID: 62713250}
 --- !u!1 &593701267
 GameObject:
   m_ObjectHideFlags: 0

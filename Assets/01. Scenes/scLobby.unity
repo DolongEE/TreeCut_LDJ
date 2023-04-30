@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c58be46f269b948ae26b244b1b1e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lodding_panel: {fileID: 1016121043}
+  pnlLoading: {fileID: 1016121043}
   start_btn: {fileID: 1228304953}
 --- !u!1 &580788117
 GameObject:

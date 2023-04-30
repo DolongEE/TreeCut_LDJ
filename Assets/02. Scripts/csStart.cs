@@ -6,23 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class csStart : MonoBehaviour
 {
-    public GameObject lodding_panel;
+    public GameObject pnlLoading;
     public Button start_btn;
 
     private void Start()
     {
-        lodding_panel.SetActive(false);
+        pnlLoading.SetActive(false);
     }
 
     // 게임 씬으로 이동
     public void OnClickStartBtn()
     {
-        csSettings.instance.OnClickBtnSound();
+        csSettings.instance.BtnSound();
 
-        lodding_panel.SetActive(true);
+        pnlLoading.SetActive(true);
         start_btn.interactable = false;
 
         //비동기 방식
-        SceneManager.LoadSceneAsync("scMine");
+        SceneManager.LoadSceneAsync("scTree");
     }
 }

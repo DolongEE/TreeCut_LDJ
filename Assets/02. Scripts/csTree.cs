@@ -23,7 +23,7 @@ public class csTree : MonoBehaviour
     private SpriteRenderer sp;
 
     private GameObject hp_bar;
-    private csFollowHPbar hp_bar_ui;
+    private csTreeHp hp_bar_ui;
 
     private csPlayerCtrl playerCtrl;
 
@@ -33,7 +33,7 @@ public class csTree : MonoBehaviour
     private void Awake()
     {
         sp = GetComponent<SpriteRenderer>();
-        hp_bar_ui = GameObject.FindGameObjectWithTag("HP_BAR_UI").GetComponent<csFollowHPbar>();
+        hp_bar_ui = GameObject.FindGameObjectWithTag("HP_BAR_UI").GetComponent<csTreeHp>();
         playerCtrl = csPlayerCtrl.instance;
     }
 
@@ -93,8 +93,8 @@ public class csTree : MonoBehaviour
     public void isActiveTrue()
     {
         hp_bar_ui.hp_count.text = "" + hp;
-        hp_bar_ui.hp_fill.fillAmount = (float)hp / (float)max_hp;
-        Debug.Log(hp_bar_ui.hp_fill.fillAmount);
+        hp_bar_ui.hp_max.fillAmount = (float)hp / (float)max_hp;
+        Debug.Log(hp_bar_ui.hp_max.fillAmount);
         hp_bar.SetActive(true);
         active = true;
         //Debug.Log(active);
@@ -127,7 +127,7 @@ public class csTree : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         hp_bar_ui.hp_count.text = "" + hp;
-        hp_bar_ui.hp_fill.fillAmount = (float)hp / (float)max_hp;
+        hp_bar_ui.hp_max.fillAmount = (float)hp / (float)max_hp;
 
         while (temp != 0)
         {
@@ -170,7 +170,7 @@ public class csTree : MonoBehaviour
 
         sp.sprite = activeIMG;
 
-        csSettings.instance.PlayEffct(this.transform.position, Random.Range(3, 5), false);
+        csSettings.instance.PlayEffect(this.transform.position, Random.Range(3, 5), false);
 
         pos.tileMove = true;
         pos.havetree = false;

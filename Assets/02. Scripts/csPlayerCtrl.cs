@@ -253,7 +253,7 @@ public class csPlayerCtrl : MonoBehaviour
 
     IEnumerator AttackSound()
     {
-        csSettings.instance.PlayEffct(this.transform.position, Random.Range(5, 8), false);
+        csSettings.instance.PlayEffect(this.transform.position, Random.Range(5, 8), false);
 
         yield return null;
     }
@@ -262,6 +262,8 @@ public class csPlayerCtrl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         playhitanim = false;
+
+        yield return null;
     }
 
     public void OnButtonCheck()
@@ -497,7 +499,7 @@ public class csPlayerCtrl : MonoBehaviour
         //Debug.Log("count : " + nodeList.Count);
         //Debug.Log("//////" + player.tilePos.x + "/" + player.tilePos.y);
         // Debug.Log("//////" + temp.tilePos.x + "/" + temp.tilePos.y);
-        int limite = 0;
+        int limit = 0;
         Vector3 pos = pos = new Vector3(-15 + (temp.tilePos.x * 0.9f), 48.3f - (temp.tilePos.y * 0.9f) + 0.5f, 0); ;
 
         do
@@ -514,7 +516,7 @@ public class csPlayerCtrl : MonoBehaviour
 
             if (player.tilePos.x < temp.tilePos.x)
             {
-                limite = 0;
+                limit = 0;
 
                 if (movenow)
                 {
@@ -659,10 +661,10 @@ public class csPlayerCtrl : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
 
-            limite++;
-        } while (limite <= 150);
+            limit++;
+        } while (limit <= 150);
 
-        if (limite != 0)
+        if (limit != 0)
         {
             this.transform.position = new Vector2(pos.x, this.transform.position.y);
         }
@@ -684,12 +686,6 @@ public class csPlayerCtrl : MonoBehaviour
     {
         if (col.gameObject.tag == "CanMove")
         {
-            //Debug.Log("---" + col.gameObject.GetComponent<csTile>().tilePos.x + " / " + col.gameObject.GetComponent<csTile>().tilePos.y);
-            //if (endPos != beforendPos )
-            //{
-            //    playerNode = col.GetComponent<csTile>();
-            //    Debug.Log("----!" + playerNode.tilePos.x + " / " + playerNode.tilePos.y);
-            //}
             playerNode = col.GetComponent<csTile>();
         }
     }

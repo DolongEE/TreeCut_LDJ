@@ -62,7 +62,7 @@ public class csMoveItem : MonoBehaviour {
 
     IEnumerator StatEffectSound()
     {
-        csSettings.instance.PlayEffct(this.transform.position, 1, false);
+        csSettings.instance.PlayEffect(this.transform.position, 1, false);
         yield return new WaitForSeconds(0.3f);
     }
 

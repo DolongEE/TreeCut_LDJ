@@ -12,8 +12,8 @@ public class csFollowCamera : MonoBehaviour
     public float xMargin = 1f;
     public float yMargin = 1f;
 
-    public float xSmooth = 8f;
-    public float ySmooth = 8f;
+    public float xSmooth = 6f;
+    public float ySmooth = 6f;
 
 
     private void Awake()
@@ -29,18 +29,6 @@ public class csFollowCamera : MonoBehaviour
     bool CheckYMargin()
     {
         return Mathf.Abs(transform.position.y - player.position.y) > yMargin;
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void LateUpdate()

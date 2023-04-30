@@ -12,7 +12,6 @@ public class PlayerData
     public int wood = 0;
     public int dmg = 0;
 
-    // 저장된 정보가 있을때 불러옴
     public PlayerData(PlayerData _data)
     {
         name = _data.name;
@@ -42,6 +41,8 @@ public class csInitData : MonoBehaviour
 
     [HideInInspector]
     public GameObject grass1;
+    [HideInInspector]
+    public GameObject grass2;
 
     [HideInInspector]
     public GameObject water;
@@ -53,28 +54,13 @@ public class csInitData : MonoBehaviour
     public GameObject target;
 
     [HideInInspector]
-    public GameObject[] treeB;
+    public GameObject[] tree;
 
     [HideInInspector]
     public Sprite btntrue;
 
     [HideInInspector]
     public Sprite btnfalse;
-
-    [HideInInspector]
-    public AudioClip walksound;
-
-    [HideInInspector]
-    public AudioClip axsound1;
-    [HideInInspector]
-    public AudioClip axsound2;
-    [HideInInspector]
-    public AudioClip axsound3;
-
-    [HideInInspector]
-    public AudioClip treedownsound1;
-    [HideInInspector]
-    public AudioClip treedownsound2;
 
     [HideInInspector]
     public GameObject wood;
@@ -107,7 +93,7 @@ public class csInitData : MonoBehaviour
         // 처음 플레이 할때
         if (!File.Exists(use_path))
         {
-            Debug.Log("Create Json.text");
+            Debug.Log("Json새로생성");
 
             FileStream tempfile = File.Create(use_path);
             datacheck = true;
@@ -118,35 +104,29 @@ public class csInitData : MonoBehaviour
             LoadJson();
         }
 
-        treeB = new GameObject[9];
+        tree = new GameObject[9];
 
         map = GameObject.FindGameObjectWithTag("Map");
 
         //리소스폴더에 저장된 정보 가져오기
         grass1 = Resources.Load<GameObject>("grass1");
+        grass2 = Resources.Load<GameObject>("grass2");
         water = Resources.Load<GameObject>("water");
         target = Resources.Load<GameObject>("SetTarget");
 
         btntrue = Resources.Load<Sprite>("IMG/button");
         btnfalse = Resources.Load<Sprite>("IMG/button2");
 
-        walksound = Resources.Load<AudioClip>("Sounds/walk");
-        axsound1 = Resources.Load<AudioClip>("Sounds/AXE01");
-        axsound2 = Resources.Load<AudioClip>("Sounds/AXE02");
-        axsound3 = Resources.Load<AudioClip>("Sounds/AXE03");
-        treedownsound1 = Resources.Load<AudioClip>("Sounds/AXE11");
-        treedownsound2 = Resources.Load<AudioClip>("Sounds/AXE12");
-
-        wood = Resources.Load<GameObject>("Firewood");
+        wood = Resources.Load<GameObject>("woodCut");
 
         hpbar = Resources.Load<GameObject>("Hp_Bar");
 
         string temp = "";
 
-        for (int i = 0; i < treeB.Length; i++)
+        for (int i = 0; i < tree.Length; i++)
         {
             temp = "Tree/B/TreeB" + (i + 1);
-            treeB[i] = Resources.Load<GameObject>(temp);
+            tree[i] = Resources.Load<GameObject>(temp);
         }
 
         Debug.Log("===== FINSH INIT DATA =====");

@@ -171,15 +171,9 @@ MonoBehaviour:
   water: {fileID: 0}
   map: {fileID: 0}
   target: {fileID: 0}
-  treeB: []
+  tree: []
   btntrue: {fileID: 0}
   btnfalse: {fileID: 0}
-  walksound: {fileID: 0}
-  axsound1: {fileID: 0}
-  axsound2: {fileID: 0}
-  axsound3: {fileID: 0}
-  treedownsound1: {fileID: 0}
-  treedownsound2: {fileID: 0}
   wood: {fileID: 0}
   hpbar: {fileID: 0}
   use_path: 
@@ -195,14 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70796003f70fac44aaddaecfac420ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundVolume: 1
-  isSoundMute: 0
-  sl: {fileID: 4794684702393373987}
-  tg: {fileID: 4794684701250665243}
+  slider: {fileID: 4794684702393373987}
+  toggle: {fileID: 4794684701250665243}
   Sound: {fileID: 4794684702446656940}
   PlaySoundBtn: {fileID: 4794684701490348903}
   soundFile:
-  - {fileID: 8300000, guid: e7ba7f6321adb694aabfe9f8a353c192, type: 3}
+  - {fileID: 8300000, guid: 078add455a1727042b5ea518e37cfc6a, type: 3}
   soundEffect:
   - {fileID: 8300000, guid: f4f7929d407caab46b5fbda07a0bc31d, type: 3}
   - {fileID: 8300000, guid: 679fa2688d31b3b4ca0329740348a6e7, type: 3}
@@ -1012,8 +1004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45, y: -45.00003}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -40, y: -40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4794684701490348900
 MonoBehaviour:
