@@ -15,6 +15,7 @@ public class csSetTarget : MonoBehaviour
 
             csTile temp = col.gameObject.GetComponent<csTile>();
 
+            //타일에 나무가 있을 때 앞에서 멈춤
             if (temp.havetree)
             {
                 temp.tree.isActiveTrue();

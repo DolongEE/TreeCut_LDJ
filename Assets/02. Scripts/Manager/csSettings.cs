@@ -10,61 +10,58 @@ public class csSettings : MonoBehaviour
 {
     public static csSettings instance;
 
-    public Slider slider;
-    public Toggle toggle;
-    public GameObject Sound;
-    public GameObject PlaySoundBtn;
+    //버튼 관련
+    public Slider sliderSound;
+    public Toggle toggleMute;
+    public GameObject pnlSound;
+    public GameObject btnSetting;
 
-    private AudioSource myaudio;
+    //소리 관련
+    private AudioSource myAudio;
     public AudioClip[] soundFile;
     public AudioClip[] soundEffect;
-
-    private bool volumeChange = false;
+        
     private float soundVolume;
     private bool isSoundMute;
 
     private float tempVolume;
     private bool tempMute;
 
-    GameObject _soundWalk;
+    private GameObject _soundWalk;
 
     void Awake()
     {
         //싱글톤
         instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
-        myaudio = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
+        myAudio = GetComponent<AudioSource>();
         SceneManager.LoadSceneAsync("scLobby");        
     }
 
     void Start()
     {
+        //저장된 사운드 값 불러옴
         LoadData();
 
         //배경음
-        myaudio.clip = soundFile[0];
-        myaudio.Play();
-        
-        //볼륨은 값대로
-        soundVolume = slider.value;
-        //토글이 isOn일때 뮤트
-        isSoundMute = toggle.isOn; 
+        myAudio.clip = soundFile[0];
+        myAudio.Play();
 
-        PlaySoundBtn.SetActive(true);
+        //볼륨은 값대로
+        soundVolume = sliderSound.value;
+
+        //토글이 isOn일때 뮤트
+        isSoundMute = toggleMute.isOn; 
+
+        btnSetting.SetActive(true);
 
         AudioSet();
     }
 
     private void Update()
     {
-        if (volumeChange)
-        {
-            volumeChange = false;
-            AudioTempSet();
-        }
-
-        // 핸드폰으로 실행 시켰을때
+        // 핸드폰 종료
         if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.GetKey(KeyCode.Escape))
@@ -73,14 +70,13 @@ public class csSettings : MonoBehaviour
                 return;
             }
         }
-
     }
 
-    // 사운드 설정
+    //사운드 설정
     public void SetSound()
     {
-        soundVolume = slider.value;
-        isSoundMute = toggle.isOn;
+        soundVolume = sliderSound.value;
+        isSoundMute = toggleMute.isOn;
 
         tempVolume = soundVolume;
         tempMute = isSoundMute;
@@ -89,30 +85,24 @@ public class csSettings : MonoBehaviour
 
         BtnSound();
 
-        Sound.SetActive(false);
-        PlaySoundBtn.SetActive(true);
+        pnlSound.SetActive(false);
+        btnSetting.SetActive(true);
     }
 
     void AudioSet()
     {
-        myaudio.volume = soundVolume;
-        myaudio.mute = isSoundMute;
+        myAudio.volume = soundVolume;
+        myAudio.mute = isSoundMute;
 
         SaveData();
-    }
-
-    void AudioTempSet()
-    {
-        myaudio.volume = slider.value;
-        myaudio.mute = toggle.isOn;
     }
 
     public void SoundUiOpen()
     {
         BtnSound();
 
-        Sound.SetActive(true);
-        PlaySoundBtn.SetActive(false);
+        pnlSound.SetActive(true);
+        btnSetting.SetActive(false);
 
         tempVolume = soundVolume;
         tempMute = isSoundMute;
@@ -120,21 +110,16 @@ public class csSettings : MonoBehaviour
 
     public void SoundUiclose()
     {
-        Sound.SetActive(false);
-        PlaySoundBtn.SetActive(true);
+        pnlSound.SetActive(false);
+        btnSetting.SetActive(true);
 
         soundVolume = tempVolume;
         isSoundMute = tempMute;
 
-        slider.value = soundVolume;
-        toggle.isOn = isSoundMute;
+        sliderSound.value = soundVolume;
+        toggleMute.isOn = isSoundMute;
 
         BtnSound();
-    }
-
-    public void OnChangeVolum()
-    {
-        volumeChange = true;
     }
 
     //플레이 이펙트사운드
@@ -153,8 +138,6 @@ public class csSettings : MonoBehaviour
 
             _audioSource.clip = soundEffect[sfx];
             _audioSource.volume = soundVolume;
-            _audioSource.minDistance = 15.0f;
-            _audioSource.maxDistance = 30.0f;
             _audioSource.loop = isLoop;
             _audioSource.Play();
 
@@ -181,8 +164,6 @@ public class csSettings : MonoBehaviour
         _audioSource.Stop();
         _audioSource.clip = soundEffect[0];
         _audioSource.volume = soundVolume;
-        _audioSource.minDistance = 15.0f;
-        _audioSource.maxDistance = 30.0f;
         _audioSource.loop = true;
         _audioSource.Play();
     }
@@ -206,7 +187,7 @@ public class csSettings : MonoBehaviour
             return;
         }
 
-        GameObject clickSfx = new GameObject("ClickSfx");
+        GameObject clickSfx = new GameObject("clickSfx");
         AudioSource _audioSource = clickSfx.AddComponent<AudioSource>();
 
         _audioSource.clip = soundEffect[2];
@@ -219,7 +200,7 @@ public class csSettings : MonoBehaviour
     //버튼 사운드
     IEnumerator BtnSounds()
     {
-        GameObject _soundObj = new GameObject("BtnSfx");
+        GameObject _soundObj = new GameObject("btnSfx");
         AudioSource _audioSource = _soundObj.AddComponent<AudioSource>();
 
         _audioSource.clip = soundEffect[2];
@@ -234,30 +215,25 @@ public class csSettings : MonoBehaviour
     //사운드 데이터 저장
     public void SaveData()
     {
-        Debug.Log(soundVolume + "볼륨 저장");
-        Debug.Log(System.Convert.ToInt32(isSoundMute) + "음소거 저장");
         PlayerPrefs.SetFloat("SoundVolume", soundVolume);
         PlayerPrefs.SetInt("SoundMute", System.Convert.ToInt32(isSoundMute));
     }
 
-    //플레이어 정보 불러오기
+    //저장된 사운드 데이터 불러오기
     public void LoadData()
     {
-        Debug.Log(PlayerPrefs.GetFloat("SoundVolume") + "볼륨 불러옴");
-        slider.value = PlayerPrefs.GetFloat("SoundVolume");
-        toggle.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("SoundMute"));
+        sliderSound.value = PlayerPrefs.GetFloat("SoundVolume");
+        toggleMute.isOn = System.Convert.ToBoolean(PlayerPrefs.GetInt("SoundMute"));
 
         int isSave = PlayerPrefs.GetInt("ISSAVE");
 
         if (isSave == 0)
         {
-            slider.value = 0.5f;
-            toggle.isOn = false;
+            sliderSound.value = 0.5f;
+            toggleMute.isOn = false;
 
             SaveData();
             PlayerPrefs.SetInt("ISSAVE", 1);
         }
     }
-
-
 }

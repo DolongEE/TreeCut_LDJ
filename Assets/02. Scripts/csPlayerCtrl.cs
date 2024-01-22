@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -9,20 +8,20 @@ using UnityEngine.UI;
 [System.Serializable]
 public struct Direction
 {
-    public Point pos;
-    public float g;
+    public Point _pos;
+    public float _g;
 
-    public Direction(Point _pos, float _g)
+    public Direction(Point pos, float g)
     {
-        this.pos = _pos;
-        this.g = _g;
+        _pos = pos;
+        _g = g;
     }
 
-    public Direction(int x, int y, float _g)
+    public Direction(int x, int y, float g)
     {
-        this.pos.x = x;
-        this.pos.y = y;
-        this.g = _g;
+        _pos.x = x;
+        _pos.y = y;
+        _g = g;
     }
 }
 
@@ -46,7 +45,7 @@ public class csPlayerCtrl : MonoBehaviour
     public csTile playerNode { get; set; }
     private csTile lastPos = null;
 
-    //A*알고리즘 적용
+    //A*알고리즘
     private List<csTile> openList;
     private List<csTile> closeList;
     private List<csTile> nodeList;
@@ -57,7 +56,7 @@ public class csPlayerCtrl : MonoBehaviour
         set { nodeList = value; }
     }
 
-
+    //전후 좌후
     private Direction[] direction = {
         new Direction(1, 0, 10f), new Direction(-1, 0, 10f),
         new Direction(0, 1, 10f), new Direction(0, -1, 10f)
@@ -65,15 +64,12 @@ public class csPlayerCtrl : MonoBehaviour
 
     private Animator anim;
 
-    private SpriteRenderer sp;
-
-    [HideInInspector]
-    public int cost = 0;
+    private SpriteRenderer spriteRenderer;
 
     private bool treebool = false;
 
     private GameObject targetObj = null;
-    private csSetTarget cstarget;
+    private csSetTarget csSetTarget;
 
     private bool stopcor = false;
 
@@ -81,12 +77,8 @@ public class csPlayerCtrl : MonoBehaviour
     public bool canAx = false;
     private bool onbtn = false;
 
-    private int looktree = 0;
-    private bool playhitanim = false;
-
-    public Text wood_text;
-    public Text woods_text;
-    private const string costX = "X ";
+    private int lookTree = 0;
+    private bool isPlayHitAnim = false;
 
     private void Awake()
     {
@@ -99,26 +91,24 @@ public class csPlayerCtrl : MonoBehaviour
         nodeList = new List<csTile>();
 
         anim = GetComponent<Animator>();
-        sp = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        LoadScore();
-
         playerNode = tiles[50, 19];
         playerPos = playerNode.tilePos;
         beforendPos = playerNode;
-        this.transform.position = new Vector3(-15 + (playerPos.x * 0.9f), 48.3f - (playerPos.y * 0.9f) + 0.5f, 0);
+        transform.position = new Vector3(-15 + (playerPos.x * 0.9f), 48.3f - (playerPos.y * 0.9f) + 0.5f, 0);
 
-        targetObj = Instantiate(csInitData.instance.target, this.transform);
-        cstarget = targetObj.GetComponent<csSetTarget>();
+        targetObj = Instantiate(csInitData.instance.target, transform);
+        csSetTarget = targetObj.GetComponent<csSetTarget>();
     }
 
     private void Update()
     {
+        //유니티 에디터 제어
 #if UNITY_EDITOR
-        //마우스 포인터 위치
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject() == true)
@@ -131,11 +121,11 @@ public class csPlayerCtrl : MonoBehaviour
             //Debug.Log(curser);
 
             targetObj.transform.position = curser;
-            cstarget.check = false;
+            csSetTarget.check = false;
 
         }
-        //핸드폰 터치 시
-#elif UNITY_ANDROID
+        //핸드폰 제어
+#elif UNITY_ANDROID        
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -162,12 +152,9 @@ public class csPlayerCtrl : MonoBehaviour
         if (playerMoveCenter && !playerMove)
         {
             playerMoveCenter = false;
-            //Debug.Log(playerPos.x);
-            //Debug.Log(playerPos.y);
 
             if (SetNode())
             {
-                //stopcor = false;
                 FindNode();
                 StartCoroutine(PlayerMove());
             }
@@ -177,27 +164,6 @@ public class csPlayerCtrl : MonoBehaviour
         {
             DoAttack();
         }
-    }
-
-    //아이템 정보 저장
-    public void SetScore(int cost_type)
-    {
-        if (cost_type == 0)
-        {
-            cost++;
-            wood_text.text = costX + cost;
-            woods_text.text = wood_text.text;
-        }
-        csInitData.instance.SavePlayerData(cost);
-    }
-
-    //아이템 정보 불러오기
-    public void LoadScore()
-    {
-        cost = csInitData.instance.myData.wood;
-
-        wood_text.text = "X " + cost;
-        woods_text.text = wood_text.text;
     }
 
     //핸드폰 조작시 터치위치 감지
@@ -214,25 +180,25 @@ public class csPlayerCtrl : MonoBehaviour
         return results.Count > 0;
     }
 
-    //공격키
+    //공격
     private void DoAttack()
     {
         StartCoroutine(AttackSound());
 
-        playhitanim = true;
+        isPlayHitAnim = true;
         StartCoroutine(AttackPlayAnim());
 
-        if (playhitanim)
+        if (isPlayHitAnim)
         {
-            if (looktree == 0 || looktree == 1)
+            if (lookTree == 0 || lookTree == 1)
             {
                 anim.Play("attacks");
             }
-            else if (looktree == 2)
+            else if (lookTree == 2)
             {
                 anim.Play("attacku");
             }
-            else if (looktree == 3)
+            else if (lookTree == 3)
             {
                 anim.Play("attack");
             }
@@ -253,7 +219,7 @@ public class csPlayerCtrl : MonoBehaviour
 
     IEnumerator AttackSound()
     {
-        csSettings.instance.PlayEffect(this.transform.position, Random.Range(5, 8), false);
+        csSettings.instance.PlayEffect(transform.position, Random.Range(5, 8), false);
 
         yield return null;
     }
@@ -261,14 +227,14 @@ public class csPlayerCtrl : MonoBehaviour
     IEnumerator AttackPlayAnim()
     {
         yield return new WaitForSeconds(0.8f);
-        playhitanim = false;
+        isPlayHitAnim = false;
 
         yield return null;
     }
 
     public void OnButtonCheck()
     {
-        if (playhitanim == false)
+        if (isPlayHitAnim == false)
         {
             onbtn = true;
         }
@@ -278,10 +244,6 @@ public class csPlayerCtrl : MonoBehaviour
     bool SetNode()
     {
         startPos = playerNode;
-
-        //Debug.Log("startpos " + startPos.tilePos.x + " / " + startPos.tilePos.y);
-        //Debug.Log("endpos " + endPos.tilePos.x + " / " + endPos.tilePos.y);
-        //Debug.Log("playerpos " + playerNode.tilePos.x + " / " + playerNode.tilePos.y);
 
         csTile myTile = tiles[startPos.tilePos.y, startPos.tilePos.x];
 
@@ -332,7 +294,7 @@ public class csPlayerCtrl : MonoBehaviour
     {
         for (int i = 0; i < direction.Length; i++)
         {
-            Point pos = new Point(tile.tilePos.x + direction[i].pos.x, tile.tilePos.y + direction[i].pos.y);
+            Point pos = new Point(tile.tilePos.x + direction[i]._pos.x, tile.tilePos.y + direction[i]._pos.y);
 
             if (pos.x < 0 || pos.x >= 50 || pos.y < 0 || pos.y >= 87)
             {
@@ -364,7 +326,7 @@ public class csPlayerCtrl : MonoBehaviour
 
             if (!openList.Contains(temp))
             {
-                temp.g = tile.g + direction[i].g;
+                temp.g = tile.g + direction[i]._g;
                 temp.h = Mathf.Abs(endPos.tilePos.x - pos.x) + Mathf.Abs(endPos.tilePos.y - pos.y);
                 temp.f = temp.g + temp.h;
                 temp.parentTile = tile;
@@ -373,7 +335,7 @@ public class csPlayerCtrl : MonoBehaviour
             }
             else if (tiles[pos.y, pos.x].g > tile.g + 10)
             {
-                temp.g = tile.g + direction[i].g;
+                temp.g = tile.g + direction[i]._g;
                 temp.f = temp.g + temp.h;
                 temp.parentTile = tile;
             }
@@ -382,7 +344,6 @@ public class csPlayerCtrl : MonoBehaviour
 
     void FindNode()
     {
-        // Debug.Log("FindNode");
         csTile temp;
 
         if (treebool)
@@ -393,10 +354,6 @@ public class csPlayerCtrl : MonoBehaviour
         {
             temp = tiles[endPos.tilePos.y, endPos.tilePos.x];
         }
-
-        // Debug.Log("= " + startPos.tilePos.x + " / " + startPos.tilePos.y);
-        //Debug.Log("== " + endPos.tilePos.x + " / " + endPos.tilePos.y);
-        //Debug.Log("==== " + playerNode.tilePos.x + " / " + playerNode.tilePos.y);
 
         while (temp != null)
         {
@@ -418,13 +375,9 @@ public class csPlayerCtrl : MonoBehaviour
 
             temp = temp.parentTile;
         }
-        //nodeList.Reverse();
-
-        //Debug.Log(nodeList.Count);
 
         for (int i = 0; i < nodeList.Count; i++)
         {
-            //Debug.Log(nodeList[i].tilePos.x + "/"+ nodeList[i].tilePos.y);
             nodeList[i].SetColor();
         }
 
@@ -453,7 +406,6 @@ public class csPlayerCtrl : MonoBehaviour
             tempnodes[i] = nodeList[i];
         }
 
-
         csTile temp = tempnodes[num];
 
         anim.SetFloat("speed", 1.0f);
@@ -464,7 +416,6 @@ public class csPlayerCtrl : MonoBehaviour
             {
                 movenow = false;
                 anim.Play("walks");
-                //anim.SetTrigger("moveside");
             }
         }
         else if (player.tilePos.x > temp.tilePos.x)
@@ -473,7 +424,6 @@ public class csPlayerCtrl : MonoBehaviour
             {
                 movenow = false;
                 anim.Play("walks");
-                //anim.SetTrigger("moveside");
             }
         }
         else if (player.tilePos.y < temp.tilePos.y)
@@ -482,7 +432,6 @@ public class csPlayerCtrl : MonoBehaviour
             {
                 movenow = false;
                 anim.Play("walk");
-                //anim.SetTrigger("move");
             }
         }
         else if (player.tilePos.y > temp.tilePos.y)
@@ -491,16 +440,13 @@ public class csPlayerCtrl : MonoBehaviour
             {
                 movenow = false;
                 anim.Play("walku");
-                //anim.SetTrigger("moveup");
             }
         }
 
         yield return new WaitForEndOfFrame();
-        //Debug.Log("count : " + nodeList.Count);
-        //Debug.Log("//////" + player.tilePos.x + "/" + player.tilePos.y);
-        // Debug.Log("//////" + temp.tilePos.x + "/" + temp.tilePos.y);
+
         int limit = 0;
-        Vector3 pos = pos = new Vector3(-15 + (temp.tilePos.x * 0.9f), 48.3f - (temp.tilePos.y * 0.9f) + 0.5f, 0); ;
+        Vector3 pos = new Vector3(-15 + (temp.tilePos.x * 0.9f), 48.3f - (temp.tilePos.y * 0.9f) + 0.5f, 0);
 
         do
         {
@@ -508,11 +454,8 @@ public class csPlayerCtrl : MonoBehaviour
             {
                 break;
             }
-            //Debug.Log("surch : " + num);
-            pos = new Vector3(-15 + (temp.tilePos.x * 0.9f), 48.3f - (temp.tilePos.y * 0.9f) + 0.5f, 0);
 
-            //Debug.Log("//////" + player.tilePos.x + "/" + player.tilePos.y);
-            //Debug.Log("@@@@" + temp.tilePos.x + "/" + temp.tilePos.y);
+            pos = new Vector3(-15 + (temp.tilePos.x * 0.9f), 48.3f - (temp.tilePos.y * 0.9f) + 0.5f, 0);
 
             if (player.tilePos.x < temp.tilePos.x)
             {
@@ -522,21 +465,20 @@ public class csPlayerCtrl : MonoBehaviour
                 {
                     movenow = false;
                     anim.Play("walks");
-                    //anim.SetTrigger("moveside");
                     way = 0;
                     yield return new WaitForEndOfFrame();
                 }
 
-                if (sp.flipX)
+                if (spriteRenderer.flipX)
                 {
-                    sp.flipX = false;
+                    spriteRenderer.flipX = false;
                 }
 
-                this.transform.position = new Vector2(this.transform.position.x + speed, this.transform.position.y);
+                transform.position = new Vector2(transform.position.x + speed, transform.position.y);
 
-                if (this.transform.position.x > pos.x)
+                if (transform.position.x > pos.x)
                 {
-                    this.transform.position = new Vector2(pos.x, this.transform.position.y);
+                    transform.position = new Vector2(pos.x, transform.position.y);
                 }
                 Debug.Log("MOVE RIGHT");
 
@@ -547,23 +489,22 @@ public class csPlayerCtrl : MonoBehaviour
                 {
                     movenow = false;
                     anim.Play("walks");
-                    //anim.SetTrigger("moveside");
                     way = 1;
                     yield return new WaitForEndOfFrame();
                 }
 
-                if (!sp.flipX)
+                if (!spriteRenderer.flipX)
                 {
 
-                    sp.flipX = true;
+                    spriteRenderer.flipX = true;
 
                 }
 
-                this.transform.position = new Vector2(this.transform.position.x - speed, this.transform.position.y);
+                transform.position = new Vector2(transform.position.x - speed, transform.position.y);
 
-                if (this.transform.position.x < pos.x)
+                if (transform.position.x < pos.x)
                 {
-                    this.transform.position = new Vector2(pos.x, this.transform.position.y);
+                    transform.position = new Vector2(pos.x, transform.position.y);
                 }
 
                 Debug.Log("MOVE LEFT");
@@ -574,21 +515,20 @@ public class csPlayerCtrl : MonoBehaviour
                 {
                     movenow = false;
                     anim.Play("walk");
-                    //anim.SetTrigger("move");
                     way = 2;
                     yield return new WaitForEndOfFrame();
                 }
 
-                if (sp.flipX)
+                if (spriteRenderer.flipX)
                 {
-                    sp.flipX = false;
+                    spriteRenderer.flipX = false;
                 }
 
-                this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - speed);
+                transform.position = new Vector2(transform.position.x, transform.position.y - speed);
 
-                if (this.transform.position.y < pos.y)
+                if (transform.position.y < pos.y)
                 {
-                    this.transform.position = new Vector2(this.transform.position.x, pos.y);
+                    transform.position = new Vector2(transform.position.x, pos.y);
                 }
 
                 Debug.Log("MOVE DOWN");
@@ -599,21 +539,20 @@ public class csPlayerCtrl : MonoBehaviour
                 {
                     movenow = false;
                     anim.Play("walku");
-                    //anim.SetTrigger("moveup");
                     way = 3;
                     yield return new WaitForEndOfFrame();
                 }
 
-                if (sp.flipX)
+                if (spriteRenderer.flipX)
                 {
-                    sp.flipX = false;
+                    spriteRenderer.flipX = false;
                 }
 
-                this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + speed);
+                transform.position = new Vector2(transform.position.x, transform.position.y + speed);
 
-                if (this.transform.position.y > pos.y)
+                if (transform.position.y > pos.y)
                 {
-                    this.transform.position = new Vector2(this.transform.position.x, pos.y);
+                    transform.position = new Vector2(transform.position.x, pos.y);
                 }
 
                 Debug.Log("MOVE UP");
@@ -666,11 +605,8 @@ public class csPlayerCtrl : MonoBehaviour
 
         if (limit != 0)
         {
-            this.transform.position = new Vector2(pos.x, this.transform.position.y);
+            transform.position = new Vector2(pos.x, transform.position.y);
         }
-
-        //Debug.Log("@@@@" + player.tilePos.x + "/" + player.tilePos.y);
-        //Debug.Log("@@@@" + temp.tilePos.x + "/" + temp.tilePos.y);
 
         anim.SetFloat("speed", 0.0f);
 
@@ -702,7 +638,7 @@ public class csPlayerCtrl : MonoBehaviour
 
         StopCoroutine(PlayerMove());
 
-        this.transform.position = new Vector3(-15 + (playerNode.tilePos.x * 0.9f), 48.3f - (playerNode.tilePos.y * 0.9f) + 0.5f, 0);
+        transform.position = new Vector3(-15 + (playerNode.tilePos.x * 0.9f), 48.3f - (playerNode.tilePos.y * 0.9f) + 0.5f, 0);
 
         for (int i = 0; i < nodeList.Count; i++)
         {
@@ -731,23 +667,17 @@ public class csPlayerCtrl : MonoBehaviour
         {
             endPos = playerNode;
         }
-        //Debug.Log(endPos.tilePos.x + " / " + endPos.tilePos.y);
-        //Debug.Log(lastPos.tilePos.x + " // " + lastPos.tilePos.y);
     }
 
     //바라보는 방향
     void LookAt()
     {
-        // Debug.Log("1");
-
         if (!treebool)
         {
-            //Debug.Log("2");
             return;
         }
         else
         {
-            //Debug.Log("3");
             treebool = false;
             canAx = true;
             csLevelManager.instance.BtnOn();
@@ -757,12 +687,10 @@ public class csPlayerCtrl : MonoBehaviour
 
         for (int i = 0; i < direction.Length; i++)
         {
-            //Debug.Log("4");
-            Point pos = new Point(look.x + direction[i].pos.x, look.y + direction[i].pos.y);
+            Point pos = new Point(look.x + direction[i]._pos.x, look.y + direction[i]._pos.y);
 
             if (pos.x < 0 || pos.x >= 50 || pos.y < 0 || pos.y >= 87)
             {
-                //Debug.Log("5");
                 continue;
             }
 
@@ -770,51 +698,45 @@ public class csPlayerCtrl : MonoBehaviour
 
             if (!temp.havetree)
             {
-                //Debug.Log("6");
                 continue;
             }
 
             if (!temp.tree.active)
             {
-                //Debug.Log("7");
                 continue;
             }
-            //Debug.Log("8");
+
             if (look.x == temp.tilePos.x)
             {
                 if (look.y < temp.tilePos.y)
                 {
-                    //Debug.Log("d");
                     anim.Play("walk");
-                    looktree = 3;
+                    lookTree = 3;
                 }
                 else if (look.y > temp.tilePos.y)
                 {
-                    //Debug.Log("u");
                     anim.Play("walku");
-                    looktree = 2;
+                    lookTree = 2;
                 }
             }
             else if (look.y == temp.tilePos.y)
             {
                 if (look.x < temp.tilePos.x)
                 {
-                    //Debug.Log("r");
                     anim.Play("walks");
-                    looktree = 0;
-                    if (sp.flipX)
+                    lookTree = 0;
+                    if (spriteRenderer.flipX)
                     {
-                        sp.flipX = false;
+                        spriteRenderer.flipX = false;
                     }
                 }
                 else if (look.x > temp.tilePos.x)
                 {
-                    //Debug.Log("l");
                     anim.Play("walks");
-                    looktree = 1;
-                    if (!sp.flipX)
+                    lookTree = 1;
+                    if (!spriteRenderer.flipX)
                     {
-                        sp.flipX = true;
+                        spriteRenderer.flipX = true;
                     }
                 }
             }

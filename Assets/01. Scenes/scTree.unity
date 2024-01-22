@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1670952436}
-        m_MethodName: OnClickDMGUpBtn
+        m_MethodName: OnClickDmgUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1808,8 +1808,8 @@ MonoBehaviour:
     y: 0
   cost: 0
   canAx: 0
-  wood_text: {fileID: 1298274420}
-  woods_text: {fileID: 593701269}
+  txtWoodShadow: {fileID: 1298274420}
+  txtWood: {fileID: 593701269}
 --- !u!224 &1664606096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1839,6 +1839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670952437}
   - component: {fileID: 1670952436}
+  - component: {fileID: 1670952438}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -1860,10 +1861,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnAttack: {fileID: 698293844}
   txtAttack: {fileID: 1346704286}
-  player_dmg: 0
-  dmg_up_cost: 0
-  dmg_up_btn: {fileID: 995703503}
-  dmg_up_cost_text: {fileID: 1590330106}
+  playerDmg: 0
+  dmgUpCost: 0
+  btnDmgUp: {fileID: 995703503}
+  txtDmgUpCost: {fileID: 1590330106}
 --- !u!4 &1670952437
 Transform:
   m_ObjectHideFlags: 0
@@ -1878,6 +1879,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670952438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670952435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dc750a01463764280960393b721636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  txtWoodShadow: {fileID: 1298274420}
+  txtWood: {fileID: 593701269}
 --- !u!1 &2034522799
 GameObject:
   m_ObjectHideFlags: 0

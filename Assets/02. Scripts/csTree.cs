@@ -40,7 +40,7 @@ public class csTree : MonoBehaviour
     private void Start()
     {
         //hp바 생성
-        hp_bar = Instantiate(csInitData.instance.hpbar, this.gameObject.transform);
+        hp_bar = Instantiate(csInitData.instance.hpbar, gameObject.transform);
         hp_bar.SetActive(false);
         max_hp = hp;
     }
@@ -86,7 +86,7 @@ public class csTree : MonoBehaviour
     {
         hp_bar.SetActive(false);
         active = false;
-        this.transform.localScale = new Vector3(0.3f, 0.3f, 1);
+        transform.localScale = new Vector3(0.3f, 0.3f, 1);
         sp.sprite = normalIMG;
     }
 
@@ -97,15 +97,15 @@ public class csTree : MonoBehaviour
         Debug.Log(hp_bar_ui.hp_max.fillAmount);
         hp_bar.SetActive(true);
         active = true;
-        //Debug.Log(active);
-        this.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+
+        transform.localScale = new Vector3(1.2f, 1.2f, 1);
         sp.sprite = activeIMG;
     }
 
     //공격당했을때
     public void Hit()
     {
-        hp -= csLevelManager.instance.player_dmg;
+        hp -= csLevelManager.instance.playerDmg;
 
         Debug.Log("TREE HP : " + hp);
 
@@ -115,7 +115,6 @@ public class csTree : MonoBehaviour
         }
         else
         {
-            //StopCoroutine(StartHit());
             StartCoroutine(StartHit());
         }
     }
@@ -139,7 +138,6 @@ public class csTree : MonoBehaviour
             {
                 temp = 0;
             }
-            //Debug.Log(sp.color);
             sp.color = new Color(1, temp, temp, _Alpha);
             yield return new WaitForSeconds(0.1f);
         }
@@ -154,13 +152,12 @@ public class csTree : MonoBehaviour
             {
                 temp = 1;
             }
-            //Debug.Log(sp.color);
             sp.color = new Color(1, temp, temp, _Alpha);
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    //HP가 0일때
+    //HP가 0일때 나무 파괴
     IEnumerator IsDie()
     {
         float temp = 1;
@@ -170,7 +167,7 @@ public class csTree : MonoBehaviour
 
         sp.sprite = activeIMG;
 
-        csSettings.instance.PlayEffect(this.transform.position, Random.Range(3, 5), false);
+        csSettings.instance.PlayEffect(transform.position, Random.Range(3, 5), false);
 
         pos.tileMove = true;
         pos.havetree = false;
@@ -196,7 +193,7 @@ public class csTree : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     //아이템 생성

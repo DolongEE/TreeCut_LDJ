@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class csSetMap : MonoBehaviour
 {
+    //0은 이동 불가능한 물 타일 생성
+    //1은 이동 가능한 땅 타일 생성
     int[,] mapPos = new int[87, 50] {
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0 },
         {0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0 },
@@ -103,13 +105,15 @@ public class csSetMap : MonoBehaviour
 
         int number = 0;
 
+        //맵 설정
         for (int j = 0; j < 87; j++)
         {
             for (int i = 0; i < 50; i++)
             {
+                //이동 가능한 땅 타일
                 if (mapPos[j, i] == 1)
                 {
-                    GameObject tempObj = Instantiate(csInitData.instance.grass2, this.transform);
+                    GameObject tempObj = Instantiate(csInitData.instance.grass2, transform);
                     tempObj.transform.position = new Vector3(-15 + x * i, -30 + (y * 87) - y * j, 0);
 
                     if (Random.Range(0, 5) == 1)
@@ -147,8 +151,10 @@ public class csSetMap : MonoBehaviour
                         csPlayerCtrl.instance.tiles[j, i] = setTile;
                     }
                 }
+                //이동 불가능한 물 타일
                 else if (mapPos[j, i] == 0)
                 {
+
                     GameObject tempObj = Instantiate(csInitData.instance.water, this.transform);
                     tempObj.transform.position = new Vector3(-15 + x * i, -30 + (y * 87) - y * j, 0);
 
@@ -160,6 +166,5 @@ public class csSetMap : MonoBehaviour
                 number++;
             }
         }
-        Debug.Log("===== Finish Init =====");
     }
 }

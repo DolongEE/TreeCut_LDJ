@@ -52,22 +52,21 @@ public class csMoveItem : MonoBehaviour {
 
                 if (item_type == TYPE.wood)
                 {
-                    csPlayerCtrl.instance.SetScore(0);
+                    csItemManager.instance.SetScore(0);
                 }                
                 Invoke("DestroyObj", 1.0f);
             }
         }
     }
 
-
     IEnumerator StatEffectSound()
     {
-        csSettings.instance.PlayEffect(this.transform.position, 1, false);
+        csSettings.instance.PlayEffect(transform.position, 1, false);
         yield return new WaitForSeconds(0.3f);
     }
 
     void DestroyObj()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

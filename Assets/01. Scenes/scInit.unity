@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grass1: {fileID: 0}
+  grass2: {fileID: 0}
   water: {fileID: 0}
   map: {fileID: 0}
   target: {fileID: 0}
@@ -189,10 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70796003f70fac44aaddaecfac420ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 4794684702393373987}
-  toggle: {fileID: 4794684701250665243}
-  Sound: {fileID: 4794684702446656940}
-  PlaySoundBtn: {fileID: 4794684701490348903}
+  sliderSound: {fileID: 4794684702393373987}
+  toggleMute: {fileID: 4794684701250665243}
+  pnlSound: {fileID: 4794684702446656940}
+  btnSetting: {fileID: 4794684701490348903}
   soundFile:
   - {fileID: 8300000, guid: 078add455a1727042b5ea518e37cfc6a, type: 3}
   soundEffect:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//플레이어를 따라다니는 카메라
 public class csFollowCamera : MonoBehaviour
 {
     public Transform player;
@@ -14,7 +15,6 @@ public class csFollowCamera : MonoBehaviour
 
     public float xSmooth = 6f;
     public float ySmooth = 6f;
-
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class csFollowCamera : MonoBehaviour
         TrackPlayer();
     }
 
+    //카메라가 플레이어를 따라다님
     void TrackPlayer()
     {
         float targetX = transform.position.x;

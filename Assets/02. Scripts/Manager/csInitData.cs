@@ -134,22 +134,19 @@ public class csInitData : MonoBehaviour
 
     private void Start()
     {
-        GGCheck("test_id");
+        PlayerInfoCheck("test_id");
     }
 
-    public void GGCheck(string _id)
+    public void PlayerInfoCheck(string _id)
     {
         PlayerData tempData = new PlayerData(_id, 0, 1);
 
         if (datacheck)
         {
             SavePlayerInfo(tempData);
-            LoadPlayerInfo(myData.name);
         }
-        else
-        {
-            LoadPlayerInfo(_id);
-        }
+
+        LoadPlayerInfo(_id);
     }
 
     // 경로 파일에서 Json파일 불러오기(플레이어 정보 불러오기)
@@ -166,6 +163,7 @@ public class csInitData : MonoBehaviour
             loadData.name = playerData[i]["name"].ToString();
 
             string toint = playerData[i]["wood"].ToString();
+
             loadData.wood = Convert.ToInt32(toint);
 
             toint = playerData[i]["dmg"].ToString();
@@ -178,41 +176,41 @@ public class csInitData : MonoBehaviour
     //플레이어 정보 가져오기
     public bool LoadPlayerInfo(string _name)
     {
+
+        bool find_data = false;
+
+        string jsonStr = File.ReadAllText(use_path);
+
+        JsonData playerData = JsonMapper.ToObject(jsonStr);
+
+        for (int i = 0; i < playerData.Count; i++)
         {
-            bool find_data = false;
+            PlayerData loadData = new PlayerData();
 
-            string jsonStr = File.ReadAllText(use_path);
+            loadData.name = playerData[i]["name"].ToString();
 
-            JsonData playerData = JsonMapper.ToObject(jsonStr);
-
-            for (int i = 0; i < playerData.Count; i++)
+            if (loadData.name != _name)
             {
-                PlayerData loadData = new PlayerData();
-
-                loadData.name = playerData[i]["name"].ToString();
-
-                if (loadData.name != _name)
-                {
-                    continue;
-                }
-
-                find_data = true;
-
-                string toint = playerData[i]["wood"].ToString();
-                loadData.wood = Convert.ToInt32(toint);
-
-                toint = playerData[i]["dmg"].ToString();
-                loadData.dmg = Convert.ToInt32(toint);
-
-                //myDataList.Add(loadData);
-                myData = new PlayerData(loadData);
+                continue;
             }
 
-            if (!find_data)
-            {
-                return false;
-            }
+            find_data = true;
+
+            string toint = playerData[i]["wood"].ToString();
+            loadData.wood = Convert.ToInt32(toint);
+
+            toint = playerData[i]["dmg"].ToString();
+            loadData.dmg = Convert.ToInt32(toint);
+
+            //myDataList.Add(loadData);
+            myData = new PlayerData(loadData);
         }
+
+        if (!find_data)
+        {
+            return false;
+        }
+
         return true;
     }
 

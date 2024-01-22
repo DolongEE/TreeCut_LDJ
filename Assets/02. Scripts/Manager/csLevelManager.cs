@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//플레이어 공격 관련 스크립트
 public class csLevelManager : MonoBehaviour
 {
     public static csLevelManager instance;
-
+    
     public Button btnAttack;
     public Text txtAttack;
 
@@ -14,18 +15,18 @@ public class csLevelManager : MonoBehaviour
     private Sprite btntrue;
     private Sprite btnfalse;
 
-    public int player_dmg;
-    public int dmg_up_cost;
+    public int playerDmg;
+    public int dmgUpCost;
 
-    public Button dmg_up_btn;
-    public Text dmg_up_cost_text;
+    public Button btnDmgUp;
+    public Text txtDmgUpCost;
 
     private void Awake()
     {
         instance = this;
         btnImage = btnAttack.GetComponent<Image>();
 
-        SetPlayerDMG();
+        SetPlayerDmg();
     }
 
     private void Start()
@@ -40,23 +41,23 @@ public class csLevelManager : MonoBehaviour
     private void Update()
     {
         //나무가 충분히 모이면 데미지 업그레이드 가능
-        if (dmg_up_cost <= csInitData.instance.myData.wood)
+        if (dmgUpCost <= csInitData.instance.myData.wood)
         {
-            dmg_up_btn.interactable = true;
+            btnDmgUp.interactable = true;
         }
         else
         {
-            dmg_up_btn.interactable = false;
+            btnDmgUp.interactable = false;
         }
     }
 
     //데미지 설정
-    void SetPlayerDMG()
+    void SetPlayerDmg()
     {
-        player_dmg = csInitData.instance.myData.dmg;
+        playerDmg = csInitData.instance.myData.dmg;
 
-        dmg_up_cost = player_dmg * 10;
-        dmg_up_cost_text.text = "현재 데미지 : " + player_dmg + "\n(나무 " + dmg_up_cost.ToString() + " 필요)";
+        dmgUpCost = playerDmg * 10;
+        txtDmgUpCost.text = "현재 데미지 : " + playerDmg + "\n(나무 " + dmgUpCost.ToString() + " 필요)";
     }
 
     public void BtnOn()
@@ -74,12 +75,12 @@ public class csLevelManager : MonoBehaviour
     }
 
     //데미지 상승 버튼
-    public void OnClickDMGUpBtn()
+    public void OnClickDmgUp()
     {
         csInitData.instance.UpgradePlayerDmg();
 
-        SetPlayerDMG();
+        SetPlayerDmg();
 
-        csPlayerCtrl.instance.LoadScore();
+        csItemManager.instance.LoadScore();
     }
 }

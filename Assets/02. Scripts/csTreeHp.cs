@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//나무 HP생성 스크립트
 public class csTreeHp : MonoBehaviour
 {
     public Text hp_count;
